@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <button id="themeToggle" class="theme-btn"><i id="icon" class="ri-moon-fill"></i></button>
+        <h1>Calcify</h1>
+        <button id="navBtn" class="nav-btn"><i class="ri-menu-line"></i></button>
+    </header>
+
+
+    <main>
+        <div class="display-container">
+            <div class="previous-calculation"></div>
+            <input type="text" id="display" readonly value=0>
+        </div>
+
+        <div class="btn-container">
+
+            <!-- Coming soon... -->
+            <!-- <button>2nd</button>
+            <button>sin</button>
+            <button>cos</button>
+            <button>tan</button>
+            <button>x<sup>y</sup></button>
+            <button>lg</button>
+            <button>(</button>
+            <button>)</button>
+            <button>√x</button>
+            <button>x!</button>
+            <button>1/x</button>
+            <button>&pi;</button> -->
+            <button id="clearAllBtn" class="calc-btn control-btn">AC</button>
+            <button id="stepBack" class="calc-btn control-btn"><i class="ri-delete-back-2-line"></i></button>
+            <button onclick="append('%')" class="calc-btn control-btn">%</i></button>
+            <button onclick="append('/')" class="calc-btn control-btn">/</button>
+            <button onclick="append('7')" class="calc-btn">7</button>
+            <button onclick="append('8')" class="calc-btn">8</button>
+            <button onclick="append('9')" class="calc-btn">9</button>
+            <button onclick="append('*')" class="calc-btn control-btn"><i class="ri-asterisk"></i></i></button>
+            <button onclick="append('4')" class="calc-btn">4</button>
+            <button onclick="append('5')" class="calc-btn">5</button>
+            <button onclick="append('6')" class="calc-btn">6</button>
+            <button onclick="append('-')" class="calc-btn control-btn"><i class="ri-subtract-line"></i></button>
+            <button onclick="append('1')" class="calc-btn">1</button>
+            <button onclick="append('2')" class="calc-btn">2</button>
+            <button onclick="append('3')" class="calc-btn">3</button>
+            <button id="add" onclick="append('+')" class="calc-btn control-btn"><i class="ri-add-line"></i></button>
+            <button id="moreOptionBtn" class="calc-btn"><i class="ri-arrow-up-double-fill"></i></button>
+            <button onclick="append('0')" class="calc-btn">0</button>
+            <button onclick="append('.')" class="calc-btn">.</button>
+            <button id="calculate" class="calc-btn control-btn"><i class="ri-equal-line"></i></button>
+        </div>
+    </main>
+
+    <aside id="aside">
+        <div class="header">
+            <h4>History</h4>
+            <button onclick="showSidePanel()"><i class="ri-close-large-line"></i></button>
+        </div>
+        <div id="historyContainer" class="history">
+
+        </div>
+    </aside>
+
+</body>
+
+</html>

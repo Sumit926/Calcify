@@ -1,0 +1,226 @@
+/* Colors */
+:root {
+  --main-color: #0f8fe5;
+  --surface-color: #ffffff;
+  --btn-bg-clr: #f1f1f1;
+  --display-clr: linear-gradient(#fafdff, #d6edfc);
+  --font: #000;
+  --font-light: #b2b2b2;
+  --nav-icon-bg: #d7d7d7;
+}
+
+/* Button Sizes */
+:root {
+  --btn-gap: 0.75rem;
+  --btn-size: 4rem;
+}
+
+.dark-mode {
+  --main-color: #0f8fe5;
+  --surface-color: #121212;
+  --btn-bg-clr: #000;
+  --display-clr: #000;
+  --font: #fff;
+  --font-light: #181818;
+  --nav-icon-bg: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 50px;
+  height: 100dvh;
+  background-color: var(--surface-color);
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--surface-color);
+}
+
+.theme-btn,
+.nav-btn {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  color: var(--font);
+  cursor: pointer;
+}
+
+.theme-btn {
+  background-color: var(--nav-icon-bg);
+  border-radius: 50%;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+aside {
+  position: fixed;
+  right: -250px;
+  width: clamp(200px, 25vw, 250px);
+  background-color: var(--surface-color);
+  min-height: 100dvh;
+  padding: 1rem;
+  z-index: 10;
+  transition: right 0.2s ease-out;
+}
+.hide {
+  right: 0px;
+}
+
+aside .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside .history p {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+aside div h4 {
+  color: var(--font);
+}
+
+aside div button {
+  background-color: transparent;
+  border: none;
+  color: var(--font);
+  font-size: 1.2rem;
+}
+
+aside p {
+  text-align: right;
+  color: var(--font);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--display-clr);
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+.previous-calculation {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--font-light);
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+}
+.previous-calculation p{
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis
+}
+.display-container input {
+  padding-left: 1rem;
+  border: none;
+  outline: none;
+  font-size: 4rem;
+  background-color: transparent;
+  width: 100%;
+  text-align: right;
+  color: var(--font);
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--btn-gap);
+  padding: 1.5rem 1rem;
+  background-color: var(--surface-color);
+}
+
+.calc-btn {
+  min-width: var(--btn-size);
+  height: var(--btn-size);
+  font-size: 1.8rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: var(--btn-bg-clr);
+  color: var(--font);
+}
+
+/* .calc-btn:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.calc-btn:active {
+  background-color: var(--btn-bg-active);
+} */
+.control-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* .control-btn:hover {
+  background-color: var(--btn-bg-hover);
+}
+.control-btn:active {
+  background-color: var(--btn-bg-active);
+} */
+
+@media (min-width: 1024px) {
+  body {
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 50px;
+    grid-template-areas:
+      "header aside"
+      "main aside";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  aside {
+    position: static;
+    grid-area: aside;
+  }
+
+  .hide {
+    display: block;
+  }
+
+  header .nav-btn,
+  aside button {
+    display: none;
+  }
+
+  header h1 {
+    margin-right: 40%;
+  }
+}
